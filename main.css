@@ -1,0 +1,140 @@
+#bouncingBall {
+	border-radius: 50%;
+	position: absolute;
+	background-color: #ff0000;
+	width: 50px;
+	height: 50px;
+	box-shadow: 2px 2px 4px #000;
+}
+
+/*квадратики*/
+body {
+  display: -webkit-box;
+  display: flex;
+}
+body > div {
+  width: 50%;
+}
+
+.anim-box {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  background-color: orange;
+}
+.anim-box:nth-child(2) {
+  background-color: #f36;
+}
+
+@-webkit-keyframes cssAnimation {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  25% {
+    -webkit-transform: translate(200px, 0);
+            transform: translate(200px, 0);
+  }
+  50% {
+    -webkit-transform: translate(200px, 200px);
+            transform: translate(200px, 200px);
+  }
+  75% {
+    -webkit-transform: translate(0, 200px);
+            transform: translate(0, 200px);
+  }
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes cssAnimation {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  25% {
+    -webkit-transform: translate(200px, 0);
+            transform: translate(200px, 0);
+  }
+  50% {
+    -webkit-transform: translate(200px, 200px);
+            transform: translate(200px, 200px);
+  }
+  75% {
+    -webkit-transform: translate(0, 200px);
+            transform: translate(0, 200px);
+  }
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+.css-animation {
+  -webkit-animation: cssAnimation 1000ms linear 500ms 50 normal both running;
+          animation: cssAnimation 1000ms linear 500ms 50 normal both running;
+}
+
+/*зигзаги*/
+#zigzag {
+  border: 1px solid black;
+  height: 250px;
+  margin: 25px;
+  width: 600px;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: dash 2s ease-out forwards;
+}
+
+#zigzag-shadow {
+  height:250px;
+  width:600px;
+  margin: 25px;
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: dash 2s ease-out forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*столбик*/
+body {
+  background: #242720;
+}
+
+.container {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100px;
+  height: 300px;
+  font-size: 0;
+  overflow: hidden;
+}
+.container .inner {
+  width: 100px;
+  height: 300px;
+}
+.container .inner > div {
+  width: 100px;
+  height: 300px;
+}
+.container .inner > div:nth-of-type(3n+1) {
+  background: #0d80f2;
+}
+.container .inner > div:nth-of-type(3n+2) {
+  background: #f2f20d;
+}
+.container .inner > div:nth-of-type(3n+3) {
+  background: #800df2;
+}
